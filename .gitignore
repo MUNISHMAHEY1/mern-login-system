@@ -1,0 +1,12 @@
+/server/node_modules
+/build
+
+.DS_Store
+
+npm-debug.log*
+yarn-delete.kog*
+yarm-error.log*
+
+.vscode
+
+server/.env
