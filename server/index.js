@@ -5,11 +5,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const userRouter = require('./routes/UserRoute');
+const config = require('./config/key');
 
-const port = process.env.PORT;
-const database = process.env.DATABASE;
-
-mongoose.connect(database, {useNewUrlParser : true, useUnifiedTopology: true, useCreateIndex: true,})
+mongoose.connect(config.mongoURI, {useNewUrlParser : true, useUnifiedTopology: true, useCreateIndex: true,})
         .then(() => console.log("Database Connected!"))
         .catch(err => console.log(err));
 
@@ -18,6 +16,6 @@ app.use(bodyParser.json());
 app.use(cookieParser()); 
 app.use('/api/users', userRouter);
 
-app.listen(port, () => {
-    console.log(`Server running at ${port}`);
+app.listen(config.PORT, () => {
+    console.log(`Server running at ${config.PORT}`);
 });
