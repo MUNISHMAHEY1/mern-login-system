@@ -9,4 +9,4 @@ yarm-error.log*
 
 .vscode
 
-server/.env
+dev.js
