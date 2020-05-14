@@ -11,7 +11,8 @@ class Register extends Component {
         email: "",
         password: "",
         passwordConfirmation:"",
-        errors: []
+        errors: [],
+        message:""
     };
 
     handleChange = event =>{
@@ -72,7 +73,8 @@ class Register extends Component {
                 .then(response => {
                     console.log(response)
                     if(response.payload.success){
-                        this.props.history.push('/login');
+                        this.setState({ message: "Account successfully created"})
+                            this.props.history.push('/login');
                     } else {
                         this.setState({ 
                             errors : this.state.errors.concat("Problem in registration. Try again!")
@@ -94,6 +96,14 @@ class Register extends Component {
         return (
             <div className="container">
                 <h4>Personal Details</h4>
+                
+                {this.state.message.length > 0 && (
+                    alert(this.state.message)
+                    // <div  style={{ color: "Green", fontSize: "1.5rem"}}>
+                    //     {this.state.message}
+                    // </div>
+                )}
+
                 <div className="row">
                     <form className="col s12" >
                         <div className="row">
