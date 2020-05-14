@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 app.use(cookieParser()); 
 app.use('/api/users', userRouter);
 
-app.listen(config.PORT, () => {
-    console.log(`Server running at ${config.PORT}`);
+const port = process.env.PORT || config.PORT
+app.listen(port, () => {
+    console.log(`Server running at ${port}`);
 });

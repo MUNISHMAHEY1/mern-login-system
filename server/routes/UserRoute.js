@@ -3,7 +3,7 @@ const Router = express.Router();
 const { User } = require('../models/user');
 const { auth } = require('../middleware/auth');
 
-Router.get('/home', (req,res) => {
+Router.get('/', (req,res) => {
     res.end("Welcome to Home Page!");
 });
 
