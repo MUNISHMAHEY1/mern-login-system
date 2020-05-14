@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-function Navbar() {
+const Navbar = props =>{
     return (
         <nav>
-            <div class="nav-wrapper">
+            <div>
                 <a href={"/"} className="brand-logo">Logo</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><Link to="/">Home</Link></li>

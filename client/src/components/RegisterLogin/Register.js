@@ -206,7 +206,7 @@ class Register extends Component {
                         )}
 
                         <div className="row">
-                            <div className="col 6">
+                            <div className="col 12">
                                 <button
                                     className="btn waves-effect red lighten-1"
                                     type="submit"
@@ -215,9 +215,9 @@ class Register extends Component {
                                     >
                                     Create an Account
                                 </button>
-                            </div>
-
-                            <div className="col 6">
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
                                 <Link to="/login">
                                     <button
                                         className="btn waves-effect red lighten-1"

@@ -98,7 +98,7 @@ class Login extends Component {
                         )}
 
                         <div className="row">
-                            <div className="col 6">
+                            <div className="col 12">
                                 <button
                                     className="btn waves-effect red lighten-1"
                                     type="submit"
@@ -107,9 +107,9 @@ class Login extends Component {
                                     >
                                     Log In
                                 </button>
-                            </div>
-
-                            <div className="col 6">
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
                                 <Link to="/register">
                                     <button
                                         className="btn waves-effect red lighten-1"
@@ -118,6 +118,10 @@ class Login extends Component {
                                         Sign up
                                     </button>
                                 </Link>
+                            </div>
+
+                            <div className="col 6">
+                                
                             </div>
 
                         </div>
