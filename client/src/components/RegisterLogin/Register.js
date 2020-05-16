@@ -65,13 +65,10 @@ class Register extends Component {
             passwordConfirmation:this.state.passwordConfirmation
         }
 
-        console.log(dataToSubmit);
-
         if(this.isFormValid()){
             this.setState({ errors: [] })
             this.props.dispatch(registerUser(dataToSubmit))
                 .then(response => {
-                    console.log(response)
                     if(response.payload.success){
                         this.setState({ message: "Account successfully created"})
                             this.props.history.push('/login');
@@ -99,9 +96,6 @@ class Register extends Component {
                 
                 {this.state.message.length > 0 && (
                     alert(this.state.message)
-                    // <div  style={{ color: "Green", fontSize: "1.5rem"}}>
-                    //     {this.state.message}
-                    // </div>
                 )}
 
                 <div className="row">

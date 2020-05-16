@@ -8,7 +8,8 @@ class Login extends Component {
     state = {
         email: "",
         password: "",
-        errors: []
+        errors: [],
+        message: ""
     };
 
 
@@ -29,6 +30,7 @@ class Login extends Component {
             this.props.dispatch(loginUser(dataToSubmit))
                 .then(response => { 
                     if(response.payload.loginSuccess){
+                        this.setState({ message: "Login Successful"})
                         this.props.history.push('/')
                     } else {
                         this.setState({
@@ -51,6 +53,9 @@ class Login extends Component {
         return (
             <div className="container">
                 <h2>Log In</h2>
+                {this.state.message.length > 0 && (
+                    alert(this.state.message)
+                )}
                 <div className="row">
                     <form className="col s12" >
                         <div className="row">

@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const userRouter = require('./routes/UserRoute');
 const config = require('./config/key');
 
-mongoose.connect(config.mongoURI, {useNewUrlParser : true, useUnifiedTopology: true, useCreateIndex: true,})
+mongoose.connect(config.mongoURI, {useNewUrlParser : true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false })
         .then(() => console.log("Database Connected!"))
         .catch(err => console.log(err));
 
